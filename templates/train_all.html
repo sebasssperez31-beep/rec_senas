@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Entrenamiento de Todas las Señales</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='train.css') }}">
+</head>
+<body>
+
+  <!-- Botón para volver al entrenamiento individual -->
+  <div class="back-btn">
+    <a href="{{ url_for('entrenamiento') }}">⬅ Volver al Entrenamiento</a>
+  </div>
+
+  <div class="container">
+    <h1>Entrenamiento de Todas las Señas</h1>
+
+    <!-- Aquí puedes mostrar un listado o menú de señas -->
+    <p>En esta sección podrás entrenar todas las señas registradas.</p>
+
+    <!-- Ejemplo de historial de señas -->
+    <div class="history-container">
+      <h2>Historial de señas entrenadas</h2>
+      <ul id="allHistory"></ul>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="{{ url_for('static', filename='train.js') }}"></script>
+</body>
+</html>

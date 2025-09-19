@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Lenguaje de Señas</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <h1>Lenguaje de Señas</h1>
+    <p>Entrena y mejora tu aprendizaje con ayuda de inteligencia artificial.</p>
+  </header>
+
+  <!-- Sección de vocales -->
+  <main>
+    <!-- Vocal A -->
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/Aa.jpg') }}" alt="Seña A" class="card-img">
+      <h2>Vocal A</h2>
+      <p>Entrena y practica la seña de la letra A.</p>
+      <a href="{{ url_for('entrenar_vocal', vocal='A') }}">Entrenar</a>
+      <a href="{{ url_for('practica_vocal', vocal='A') }}">Practicar</a>
+    </div>
+
+    <!-- Vocal E -->
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/E.jpg') }}" alt="Seña E" class="card-img">
+      <h2>Vocal E</h2>
+      <p>Entrena y practica la seña de la letra E.</p>
+      <a href="{{ url_for('entrenar_vocal', vocal='E') }}">Entrenar</a>
+      <a href="{{ url_for('practica_vocal', vocal='E') }}">Practicar</a>
+    </div>
+
+    <!-- Vocal I -->
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/I.jpg') }}" alt="Seña I" class="card-img">
+      <h2>Vocal I</h2>
+      <p>Entrena y practica la seña de la letra I.</p>
+      <a href="{{ url_for('entrenar_vocal', vocal='I') }}">Entrenar</a>
+      <a href="{{ url_for('practica_vocal', vocal='I') }}">Practicar</a>
+    </div>
+
+    <!-- Vocal O -->
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/O.jpg') }}" alt="Seña O" class="card-img">
+      <h2>Vocal O</h2>
+      <p>Entrena y practica la seña de la letra O.</p>
+      <a href="{{ url_for('entrenar_vocal', vocal='O') }}">Entrenar</a>
+      <a href="{{ url_for('practica_vocal', vocal='O') }}">Practicar</a>
+    </div>
+
+    <!-- Vocal U -->
+    <div class="card">
+      <img src="{{ url_for('static', filename='img/Uu.jpg') }}" alt="Seña U" class="card-img">
+      <h2>Vocal U</h2>
+      <p>Entrena y practica la seña de la letra U.</p>
+      <a href="{{ url_for('entrenar_vocal', vocal='U') }}">Entrenar</a>
+      <a href="{{ url_for('practica_vocal', vocal='U') }}">Practicar</a>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Proyecto de Lenguaje de Señas </p>
+  </footer>
+
+  <!-- Script -->
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

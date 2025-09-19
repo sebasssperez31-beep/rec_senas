@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Practicando: {{ vocal }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='practica.css') }}">
+</head>
+<body>
+  
+<header>
+  <div class="back-container">
+    <a href="{{ url_for('index') }}" class="btn-back">⬅ Volver</a>
+  </div>
+  <h2>Practicando: {{ vocal }}</h2>
+  <p>Entrena con tu IA personalizada para mejorar tu precisión</p>
+</header>
+
+
+  </header>
+
+  <!-- Métricas -->
+  <div class="metrics">
+    <div class="metric">
+      <h3>Intentos</h3>
+      <p id="intentos">0</p>
+    </div>
+    <div class="metric">
+      <h3>Correctos</h3>
+      <p id="correctos">0</p>
+    </div>
+    <div class="metric">
+      <h3>Racha Actual</h3>
+      <p id="racha">0</p>
+    </div>
+    <div class="metric">
+      <h3>Precisión</h3>
+      <p id="precision">0%</p>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Cámara -->
+    <div class="card">
+      <h3>Cámara de Aprendizaje</h3>
+      <img id="video" src="{{ url_for('video_practica', vocal=vocal) }}" alt="Video">
+      <div class="controls">
+        <button id="playBtn" class="btn-play">▶️ Play</button>
+        <button id="stopBtn" class="btn-stop">⏹ Detener</button>
+        <button id="resetBtn" class="btn-restart">🔄 Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Progreso -->
+    <div class="card">
+      <h3>Progreso de Aprendizaje</h3>
+      <p><b>Objetivo Actual:</b> {{ vocal }}</p>
+
+      <p>Progreso del Conjunto</p>
+      <div class="progress-bar"><span id="progreso"></span></div>
+
+      <p>Precisión de la Sesión</p>
+      <div class="progress-bar"><span id="precision-bar"></span></div>
+
+      <h4>Señales Disponibles:</h4>
+      <div class="signal-list">
+        <div class="signal">A</div>
+        <div class="signal">E</div>
+        <div class="signal">I</div>
+        <div class="signal">O</div>
+        <div class="signal">U</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script>
+    // Play
+    document.getElementById("playBtn").addEventListener("click", () => {
+      fetch("{{ url_for('start_recognition') }}", { method: "POST" })
+        .then(r => r.text())
+        .then(data => console.log("▶️", data));
+    });
+
+    // Stop
+    document.getElementById("stopBtn").addEventListener("click", () => {
+      fetch("{{ url_for('stop_recognition') }}", { method: "POST" })
+        .then(r => r.text())
+        .then(data => console.log("⏹", data));
+    });
+
+    // Reset
+    document.getElementById("resetBtn").addEventListener("click", () => {
+      fetch("{{ url_for('reiniciar_practica') }}", { method: "POST" })
+        .then(r => r.json())
+        .then(data => {
+          console.log("🔄", data);
+          document.getElementById("intentos").innerText = "0";
+          document.getElementById("correctos").innerText = "0";
+          document.getElementById("racha").innerText = "0";
+          document.getElementById("precision").innerText = "0%";
+          document.getElementById("progreso").style.width = "0%";
+          document.getElementById("precision-bar").style.width = "0%";
+        });
+    });
+
+    // 📡 Actualizar estadísticas cada 2 segundos
+    setInterval(() => {
+      fetch("{{ url_for('status_practica') }}")
+        .then(r => r.json())
+        .then(data => {
+          document.getElementById("intentos").innerText = data.intentos;
+          document.getElementById("correctos").innerText = data.correctos;
+          document.getElementById("racha").innerText = data.racha;
+          document.getElementById("precision").innerText = data.precision + "%";
+
+          // actualizar barras
+          document.getElementById("progreso").style.width = data.progreso + "%";
+          document.getElementById("precision-bar").style.width = data.precision + "%";
+        });
+    }, 2000);
+  </script>
+</body>
+</html>

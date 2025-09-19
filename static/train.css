@@ -1,0 +1,177 @@
+/* ====== Layout general ====== */
+body {
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Botón volver al inicio (arriba a la izquierda) */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+
+.back-btn a {
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  background-color: #2563eb;
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.back-btn a:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+/* ====== Contenedor ====== */
+.container {
+  background: #fff;
+  padding: 20px 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+  width: 100%;
+  position: relative;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* ====== Campo de etiqueta ====== */
+label[for="labelInput"] {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: #444;
+  text-align: center;
+}
+
+#labelInput {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 60%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+#labelInput:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 8px rgba(37,99,235,0.4);
+}
+
+/* ====== Video ====== */
+.video-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#videoFeed {
+  max-width: 480px;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+/* ====== Botones ====== */
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+#startBtn {
+  background: #2563eb;
+  color: white;
+}
+#startBtn:hover {
+  background: #1d4ed8;
+  transform: scale(1.05);
+}
+
+#trainBtn {
+  background: #16a34a;
+  color: white;
+}
+#trainBtn:hover {
+  background: #15803d;
+  transform: scale(1.05);
+}
+
+#stopBtn {
+  background: #dc2626;
+  color: white;
+}
+#stopBtn:hover {
+  background: #b91c1c;
+  transform: scale(1.05);
+}
+
+/* ====== Etiqueta actual ====== */
+#currentLabel {
+  font-weight: bold;
+  color: #2563eb;
+}
+
+/* ====== Historial ====== */
+.history-container {
+  margin-top: 20px;
+}
+
+.history-container h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+  text-align: center;
+}
+
+#history {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fafafa;
+}
+
+#history li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #e5e5e5;
+  font-size: 14px;
+  color: #333;
+}
+
+#history li:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,110 @@
+/* ======= Reset básico ======= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f7fb;
+  color: #333;
+}
+
+/* ======= Encabezado ======= */
+header {
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  background: #81b2f1;
+  border-bottom: 2px solid #8bc0fd;
+}
+header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #4b3f72;
+}
+header p {
+  margin: 6px 0 0;
+  color: #6b5ca5;
+  font-size: 14px;
+}
+
+/* ======= Botón Volver ======= */
+.back-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.btn-back {
+  display: inline-block;
+  background: #c8b6f0;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.btn-back:hover {
+  background: #a78bfa;
+}
+
+/* ======= Contenedor principal ======= */
+.main-content {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+/* ======= Tarjetas ======= */
+.card {
+  background: #82d7f8;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+  flex: 1;
+  min-width: 300px;
+  max-width: 420px;
+  text-align: center;
+}
+
+/* ======= Cámara ======= */
+#video-feed {
+  width: 100%;
+  max-width: 360px;
+  border-radius: 12px;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ======= Botones ======= */
+.controls {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+.controls button {
+  padding: 7px 14px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.btn-play {
+  background: #a7f3d0;
+  color: #065f46;
+}
+.btn-play:hover {
+  background: #6ee7b7;
+}
+.btn-stop {
+  background: #fecaca;
+  color: #7f1d1d;
+}
+.btn-stop:hover {
+  background: #fca5a5;
+}

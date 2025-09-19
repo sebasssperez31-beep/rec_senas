@@ -1,0 +1,104 @@
+/* ======= Reset ======= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ede2f7, #d6f0f9);
+  color: #333;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ======= Header ======= */
+header {
+  text-align: center;
+  padding: 40px 20px;
+}
+header h1 {
+  font-size: 2.2rem;
+  margin: 0;
+  color: #4b3f72;
+}
+header p {
+  margin-top: 10px;
+  color: #5a4e91;
+  font-size: 1rem;
+}
+
+/* ======= Main ======= */
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  padding: 20px;
+  flex: 1;
+}
+
+/* ======= Cards ======= */
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 15px;
+  width: 260px;
+  height: 400px;   /* 🔥 altura uniforme para todas */
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* distribuye el contenido */
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 18px rgba(0,0,0,0.15);
+}
+.card h2 {
+  margin: 6px 0 8px;
+  font-size: 1.3rem;
+  color: #4b3f72;
+}
+.card p {
+  font-size: 0.85rem;
+  color: #6b5ca5;
+  margin-bottom: 10px;
+}
+
+/* ======= Botones ======= */
+.card a {
+  display: inline-block;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.25s ease;
+  background: linear-gradient(135deg, #a78bfa, #7dd3fc);
+  color: white;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.card a:hover {
+  background: linear-gradient(135deg, #7dd3fc, #a78bfa);
+  transform: scale(1.05);
+}
+
+/* ======= Footer ======= */
+footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 0.8rem;
+  background: rgba(255,255,255,0.6);
+  color: #555;
+}
+
+/* Imagen dentro de las tarjetas */
+.card-img {
+  width: 100%;
+  height: 180px;            /* Altura fija para que todas se vean parejas */
+  object-fit: cover;        /* Recorta la imagen sin deformarla */
+  border-radius: 12px;      /* Bordes redondeados */
+  margin-bottom: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}

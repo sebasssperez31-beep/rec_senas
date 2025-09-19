@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Entrenamiento de la vocal {{ vocal }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='entrenar.css') }}">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <div class="back-container">
+      <a href="{{ url_for('index') }}" class="btn-back">⬅ Volver</a>
+    </div>
+    <h1>Entrenamiento de la vocal {{ vocal }}</h1>
+    <p>Realiza la seña de la vocal <strong>{{ vocal }}</strong> frente a la cámara.</p>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="main-content">
+    <!-- Cámara -->
+    <div class="card">
+      <h3>Vista de Cámara</h3>
+      <img src="{{ url_for('video_entrenar', vocal=vocal) }}" id="video-feed" alt="Cámara en vivo">
+      <div class="controls">
+        <button id="startTrain" class="btn-play">▶ Iniciar entrenamiento</button>
+        <button id="stopTrain" class="btn-stop">⏹ Detener entrenamiento</button>
+      </div>
+    </div>
+
+    <!-- Resultado -->
+    <div class="card">
+      <h3>Resultado</h3>
+      <div id="resultado">-</div>
+    </div>
+  </main>
+
+  <!-- Script -->
+  <script>
+    // Iniciar entrenamiento
+    document.getElementById("startTrain").addEventListener("click", () => {
+      fetch("{{ url_for('start_training') }}", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "label={{ vocal }}"
+      }).then(r => r.text()).then(data => {
+        console.log("✅", data);
+        document.getElementById("resultado").innerText = "Entrenamiento iniciado para la vocal {{ vocal }}";
+      });
+    });
+
+    // Detener entrenamiento
+    document.getElementById("stopTrain").addEventListener("click", () => {
+      fetch("{{ url_for('stop_training') }}", {
+        method: "POST"
+      }).then(r => r.text()).then(data => {
+        console.log("🛑", data);
+        document.getElementById("resultado").innerText = "Entrenamiento detenido.";
+      });
+    });
+  </script>
+</body>
+</html>

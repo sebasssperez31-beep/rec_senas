@@ -1,0 +1,149 @@
+/* practica.css — estilo pastel limpio */
+
+/* Reset */
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: "Poppins", sans-serif;
+  background: #667bf0; /* fondo violeta pastel */
+  color: #333;
+  padding: 20px;
+}
+
+/* Encabezado */
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000; /* morado intenso */
+}
+header p {
+  color: #0a0a0a; /* morado suave */
+  font-size: 14px;
+}
+
+/* Métricas arriba */
+.metrics {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.metric {
+  flex: 1;
+  min-width: 120px;
+  background: #86baf7; /* lila claro */
+  border-radius: 10px;
+  padding: 14px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+.metric h3 {
+  font-size: 13px;
+  font-weight: 500;
+  color: #5a3d85;
+}
+.metric p {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 6px;
+  color: #3d256b;
+}
+
+/* Contenedor de dos columnas */
+.main-content {
+  display: grid;
+  grid-template-columns: 0.8fr 0.7fr; /* 👈 más proporción compacta */
+  gap: 16px; /* un poco menos de espacio */
+}
+
+/* Card genérica */
+.card {
+  background: #ede2f7;
+  border-radius: 12px;
+  padding: 14px; /* 👈 menos padding */
+  box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+}
+
+/* Cámara */
+#video {
+  width: 100%;   /* 👈 antes 100% → ahora un poco más chico */
+  max-width: 500px; /* 👈 límite para que no se vea gigante */
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  display: block;
+  margin: 0 auto;
+}
+.controls {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+.controls button {
+  padding: 5px 10px; /* 👈 más chicos */
+  font-size: 13px;
+}
+
+.controls button:hover {
+  opacity: 0.85;
+}
+.btn-play { background: #b5a7f2; color: #fff; }
+.btn-stop { background: #f28b82; color: #fff; }
+.btn-restart { background: #93c5fd; color: #fff; }
+
+/* Progreso */
+.card h3, .card p, .card h4 {
+  margin-bottom: 8px;
+}
+.progress-bar {
+  background: #e5d9f2;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 10px;
+  margin: 10px 0 16px; /* más espacio entre barras */
+}
+.progress-bar span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: #8e7cc3;
+  transition: width 0.3s ease;
+}
+
+/* Lista de señales */
+.signal-list {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.signal {
+  background: #f3f0fa;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px; /* más pequeñas */
+  font-weight: 500;
+  color: #4b0082;
+}
+/* Botón volver arriba a la izquierda */
+.back-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.btn-back {
+  display: inline-block;
+  background: #c8b6f0;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.2s ease;
+}
+.btn-back:hover {
+  background: #a78bfa;
+}

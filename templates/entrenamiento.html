@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Entrenamiento de Señales</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='train.css') }}">
+</head>
+<body>
+
+  <!-- Botón para volver al index -->
+  <div class="back-btn">
+    <a href="{{ url_for('index') }}">⬅ Volver al Inicio</a>
+  </div>
+
+  <div class="container">
+    <h1>Entrenamiento de Señas</h1>
+
+    <!-- Campo para escribir la etiqueta -->
+    <label for="labelInput">Escribe la etiqueta:</label>
+    <input type="text" id="labelInput" placeholder="Ejemplo: hola">
+
+    <!-- Video de la cámara -->
+    <div class="video-container">
+      <img id="videoFeed" src="" alt="Cámara">
+    </div>
+    
+    <!-- Botones -->
+    <div class="buttons">
+      <button id="startBtn">Iniciar Cámara</button>
+      <button id="trainBtn">Entrenar</button>
+      <button id="trainAllBtn">Entrenar todas las señas</button>
+      <button id="stopBtn">Detener</button>
+    </div>
+
+    <!-- Estado actual -->
+    <p><strong>Etiqueta actual:</strong> <span id="currentLabel"></span></p>
+
+    <!-- Historial -->
+    <div class="history-container">
+      <h2>Historial</h2>
+      <ul id="history"></ul>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="{{ url_for('static', filename='train.js') }}"></script>
+</body>
+</html>
