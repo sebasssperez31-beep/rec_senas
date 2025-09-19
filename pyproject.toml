@@ -1,0 +1,8 @@
+[tool.poetry]
+name = "rec_senas"
+version = "0.1.0"
+description = "Sistema de reconocimiento de señas"
+authors = ["Sebas"]
+
+[tool.poetry.dependencies]
+python = "3.10.12"
